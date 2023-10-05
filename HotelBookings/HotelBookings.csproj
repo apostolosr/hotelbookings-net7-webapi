@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.11" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.11">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Database\" />
+    <None Remove="Models\" />
+    <None Remove="Models\Hotels\" />
+    <None Remove="Entities\" />
+    <None Remove="Services\" />
+    <None Remove="Services\Bookings\" />
+    <None Remove="Services\Hotels\" />
+    <None Remove="Models\Bookings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\" />
+    <Folder Include="Models\" />
+    <Folder Include="Models\Hotels\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Bookings\" />
+    <Folder Include="Services\Hotels\" />
+    <Folder Include="Models\Bookings\" />
+  </ItemGroup>
+</Project>
